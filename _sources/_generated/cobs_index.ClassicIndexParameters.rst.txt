@@ -1,0 +1,38 @@
+cobs\_index.ClassicIndexParameters
+==================================
+
+.. currentmodule:: cobs_index
+
+.. autoclass:: ClassicIndexParameters
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ClassicIndexParameters.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ClassicIndexParameters.canonicalize
+      ~ClassicIndexParameters.clobber
+      ~ClassicIndexParameters.continue
+      ~ClassicIndexParameters.false_positive_rate
+      ~ClassicIndexParameters.keep_temporary
+      ~ClassicIndexParameters.log_prefix
+      ~ClassicIndexParameters.mem_bytes
+      ~ClassicIndexParameters.num_hashes
+      ~ClassicIndexParameters.num_threads
+      ~ClassicIndexParameters.signature_size
+      ~ClassicIndexParameters.term_size
+   
+   

@@ -1,0 +1,37 @@
+cobs\_index.CompactIndexParameters
+==================================
+
+.. currentmodule:: cobs_index
+
+.. autoclass:: CompactIndexParameters
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CompactIndexParameters.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CompactIndexParameters.canonicalize
+      ~CompactIndexParameters.clobber
+      ~CompactIndexParameters.continue
+      ~CompactIndexParameters.false_positive_rate
+      ~CompactIndexParameters.keep_temporary
+      ~CompactIndexParameters.mem_bytes
+      ~CompactIndexParameters.num_hashes
+      ~CompactIndexParameters.num_threads
+      ~CompactIndexParameters.page_size
+      ~CompactIndexParameters.term_size
+   
+   

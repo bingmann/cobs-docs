@@ -1,0 +1,36 @@
+cobs\_index.FileType
+====================
+
+.. currentmodule:: cobs_index
+
+.. autoclass:: FileType
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FileType.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FileType.Any
+      ~FileType.Cortex
+      ~FileType.Fasta
+      ~FileType.FastaMulti
+      ~FileType.Fastq
+      ~FileType.FastqMulti
+      ~FileType.KMerBuffer
+      ~FileType.Text
+      ~FileType.name
+   
+   

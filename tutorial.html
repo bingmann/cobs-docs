@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial for COBS Python Interface &mdash; cobs_index 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="COBS Python API Reference" href="cobs_index.html" />
+    <link rel="prev" title="COBS: A Compact Bit-Sliced Signature Index" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> cobs_index
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial for COBS Python Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-lists">Document Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#index-construction">Index Construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#querying-an-index">Querying an Index</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cobs_index.html">COBS Python API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cobs_index</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Tutorial for COBS Python Interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorial-for-cobs-python-interface">
+<span id="tutorial"></span><h1>Tutorial for COBS Python Interface<a class="headerlink" href="#tutorial-for-cobs-python-interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Installation of COBS with Python interface is easy using pip. The <a class="reference external" href="https://pypi.org/project/cobs_index">package name
+on PyPI</a> is <code class="docutils literal notranslate"><span class="pre">cobs_index</span></code> and you need cmake
+and a recent C++11 compiler to build the C++ library source.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install --user cobs_index
+</pre></div>
+</div>
+</div>
+<div class="section" id="document-lists">
+<h2>Document Lists<a class="headerlink" href="#document-lists" title="Permalink to this headline">¶</a></h2>
+<p>COBS can read and create an index from the following document types:</p>
+<ul class="simple">
+<li><p>FastA (<code class="docutils literal notranslate"><span class="pre">.fasta</span></code>, <code class="docutils literal notranslate"><span class="pre">.fa</span></code>, <code class="docutils literal notranslate"><span class="pre">.fasta.gz</span></code>, <code class="docutils literal notranslate"><span class="pre">.fa.gz</span></code>)</p></li>
+<li><p>FastQ (<code class="docutils literal notranslate"><span class="pre">.fastq</span></code>, <code class="docutils literal notranslate"><span class="pre">.fq</span></code>, <code class="docutils literal notranslate"><span class="pre">.fastq.gz</span></code>, <code class="docutils literal notranslate"><span class="pre">.fq.gz</span></code>)</p></li>
+<li><p>McCortex (<code class="docutils literal notranslate"><span class="pre">.ctx</span></code>, <code class="docutils literal notranslate"><span class="pre">.cortex</span></code>)</p></li>
+<li><p>text files (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>)</p></li>
+<li><p>MultiFastA (<code class="docutils literal notranslate"><span class="pre">.mfasta</span></code>)</p></li>
+</ul>
+<p>The document types are identified by extension and compressed <code class="docutils literal notranslate"><span class="pre">.gz</span></code> files are
+handled transparently. The set of k-mers extracted from each file type is
+handled slightly differently: for FastA files each continuous subsequence is
+broken into k-mers individually, while McCortex files explicitly list all
+k-mers, and for text files the entire continuous file is broken into
+k-mers. Each document creates one entry in the index, except for MultiFastA were
+each subsequence is considered an individual document.</p>
+<p>COBS usually scans a directory and creates an index containing all documents it
+finds.  For more fine-grain control, document lists are represented using
+<a class="reference internal" href="_generated/cobs_index.DocumentList.html#cobs_index.DocumentList" title="cobs_index.DocumentList"><code class="xref py py-class docutils literal notranslate"><span class="pre">DocumentList</span></code></a> objects. DocumentLists can be created empty or by scanning
+a directory, files can be added, and they contain <a class="reference internal" href="_generated/cobs_index.DocumentEntry.html#cobs_index.DocumentEntry" title="cobs_index.DocumentEntry"><code class="xref py py-class docutils literal notranslate"><span class="pre">DocumentEntry</span></code></a> objects
+which can be iterated over.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cobs_index</span> <span class="kn">as</span> <span class="nn">cobs</span>
+
+<span class="n">doclist1</span> <span class="o">=</span> <span class="n">cobs</span><span class="o">.</span><span class="n">DocumentList</span><span class="p">(</span><span class="s2">&quot;/path/to/documents&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;doclist1: ({} entries)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">doclist1</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">doclist1</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;doc[{}] name {} size {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+
+<span class="n">doclist2</span> <span class="o">=</span> <span class="n">cobs</span><span class="o">.</span><span class="n">DocumentList</span><span class="p">()</span>
+<span class="n">doclist2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;/path/to/single/document.fa&quot;</span><span class="p">)</span>
+<span class="n">doclist2</span><span class="o">.</span><span class="n">add_recursive</span><span class="p">(</span><span class="s2">&quot;/path/to/documents&quot;</span><span class="p">,</span> <span class="n">cobs</span><span class="o">.</span><span class="n">FileType</span><span class="o">.</span><span class="n">Fasta</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;doclist2: ({} entries)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">doclist2</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">doclist2</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;doc[{}] name {} size {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="index-construction">
+<h2>Index Construction<a class="headerlink" href="#index-construction" title="Permalink to this headline">¶</a></h2>
+<p>Compact indices are constructed using the functions <a class="reference internal" href="_generated/cobs_index.compact_construct.html#cobs_index.compact_construct" title="cobs_index.compact_construct"><code class="xref py py-func docutils literal notranslate"><span class="pre">compact_construct()</span></code></a> or
+<a class="reference internal" href="_generated/cobs_index.compact_construct_list.html#cobs_index.compact_construct_list" title="cobs_index.compact_construct_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">compact_construct_list()</span></code></a>. The first scans a directory for documents and
+constructs an index from them, while the latter takes a explicit
+<a class="reference internal" href="_generated/cobs_index.DocumentList.html#cobs_index.DocumentList" title="cobs_index.DocumentList"><code class="xref py py-class docutils literal notranslate"><span class="pre">DocumentList</span></code></a>. Note that the output index file <em>must</em> end with
+<code class="docutils literal notranslate"><span class="pre">.cobs_compact</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cobs</span><span class="o">.</span><span class="n">compact_construct</span><span class="p">(</span><span class="s2">&quot;/path/to/documents&quot;</span><span class="p">,</span> <span class="s2">&quot;my_index.cobs_compact&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Parameters for index construction may be passed using a
+<a class="reference internal" href="_generated/cobs_index.CompactIndexParameters.html#cobs_index.CompactIndexParameters" title="cobs_index.CompactIndexParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompactIndexParameters</span></code></a> object. See the class documentation for a
+complete list of parameters. The default parameters are a reasonable choice for
+most DNA k-mer applications.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cobs_index</span> <span class="kn">as</span> <span class="nn">cobs</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">cobs</span><span class="o">.</span><span class="n">CompactIndexParameters</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">term_size</span> <span class="o">=</span> <span class="mi">31</span>               <span class="c1"># k-mer size</span>
+<span class="n">p</span><span class="o">.</span><span class="n">clobber</span> <span class="o">=</span> <span class="bp">True</span>               <span class="c1"># overwrite output and temporary files</span>
+<span class="n">p</span><span class="o">.</span><span class="n">false_positive_rate</span> <span class="o">=</span> <span class="mf">0.4</span>    <span class="c1"># higher false positive rate -&gt; smaller index</span>
+
+<span class="n">cobs</span><span class="o">.</span><span class="n">compact_construct</span><span class="p">(</span><span class="s2">&quot;/path/to/documents&quot;</span><span class="p">,</span> <span class="s2">&quot;my_index.cobs_compact&quot;</span><span class="p">,</span> <span class="n">index_params</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Besides compact indices, COBS also constructs and supports “classic”
+indices. These are however usually not be used in practice and thus not further
+discussed here.</p>
+</div>
+<div class="section" id="querying-an-index">
+<h2>Querying an Index<a class="headerlink" href="#querying-an-index" title="Permalink to this headline">¶</a></h2>
+<p>To query an index, first load it using a <a class="reference internal" href="_generated/cobs_index.Search.html#cobs_index.Search" title="cobs_index.Search"><code class="xref py py-class docutils literal notranslate"><span class="pre">Search</span></code></a> object. This method
+detects the type of index, reads the metadata, and opens the entire file using
+<code class="docutils literal notranslate"><span class="pre">mmap</span></code>.</p>
+<p>Querying is performed with the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Search.search()</span></code> method. This method returns
+<strong>a list containing pairs</strong>: <code class="docutils literal notranslate"><span class="pre">(#occurrences,</span> <span class="pre">document</span> <span class="pre">name)</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cobs_index</span> <span class="kn">as</span> <span class="nn">cobs</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">cobs</span><span class="o">.</span><span class="n">Search</span><span class="p">(</span><span class="s2">&quot;out.cobs_compact&quot;</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;AGTCAACGCTAAGGCATTTCCCCCCTGCCTCCTGCCTGCTGCCAAGCCCT&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="c1"># output: [(20, &#39;sample1&#39;), (16, &#39;sample2&#39;), ...]</span>
+</pre></div>
+</div>
+<p>With the default search parameters <strong>all document scores</strong> are returned. For
+large corpora creating this Python list is a substantial overhead, such that the
+result set should be limited using a) the <code class="docutils literal notranslate"><span class="pre">threshold</span></code> parameter or b) the
+<code class="docutils literal notranslate"><span class="pre">num_results</span></code> parameter. Threshold determines the fraction of k-mers in the
+query a document be reach to be included in the result, while <code class="docutils literal notranslate"><span class="pre">num_results</span></code>
+simply limits the list size to a given number.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cobs_index.html" class="btn btn-neutral float-right" title="COBS Python API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="COBS: A Compact Bit-Sliced Signature Index" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Timo Bingmann
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+cobs\_index.disable\_cache
+==========================
+
+.. currentmodule:: cobs_index
+
+.. autofunction:: disable_cache

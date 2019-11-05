@@ -1,0 +1,6 @@
+cobs\_index.classic\_construct
+==============================
+
+.. currentmodule:: cobs_index
+
+.. autofunction:: classic_construct

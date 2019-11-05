@@ -1,0 +1,27 @@
+cobs\_index.DocumentList
+========================
+
+.. currentmodule:: cobs_index
+
+.. autoclass:: DocumentList
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DocumentList.__init__
+      ~DocumentList.add
+      ~DocumentList.add_recursive
+      ~DocumentList.size
+      ~DocumentList.sort_by_path
+      ~DocumentList.sort_by_size
+   
+   
+
+   
+   
+   

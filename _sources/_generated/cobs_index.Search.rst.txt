@@ -1,0 +1,23 @@
+cobs\_index.Search
+==================
+
+.. currentmodule:: cobs_index
+
+.. autoclass:: Search
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Search.__init__
+      ~Search.search
+   
+   
+
+   
+   
+   

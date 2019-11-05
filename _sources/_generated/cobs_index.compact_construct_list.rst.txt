@@ -1,0 +1,6 @@
+cobs\_index.compact\_construct\_list
+====================================
+
+.. currentmodule:: cobs_index
+
+.. autofunction:: compact_construct_list
