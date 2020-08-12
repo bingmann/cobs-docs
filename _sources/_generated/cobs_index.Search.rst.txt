@@ -1,4 +1,4 @@
-cobs\_index.Search
+﻿cobs\_index.Search
 ==================
 
 .. currentmodule:: cobs_index

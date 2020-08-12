@@ -1,4 +1,4 @@
-cobs\_index.ClassicIndexParameters
+﻿cobs\_index.ClassicIndexParameters
 ==================================
 
 .. currentmodule:: cobs_index

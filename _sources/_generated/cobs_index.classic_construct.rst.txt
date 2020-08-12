@@ -1,4 +1,4 @@
-cobs\_index.classic\_construct
+﻿cobs\_index.classic\_construct
 ==============================
 
 .. currentmodule:: cobs_index

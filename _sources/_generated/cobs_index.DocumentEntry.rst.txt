@@ -1,4 +1,4 @@
-cobs\_index.DocumentEntry
+﻿cobs\_index.DocumentEntry
 =========================
 
 .. currentmodule:: cobs_index

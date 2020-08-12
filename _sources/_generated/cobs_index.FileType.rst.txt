@@ -1,4 +1,4 @@
-cobs\_index.FileType
+﻿cobs\_index.FileType
 ====================
 
 .. currentmodule:: cobs_index

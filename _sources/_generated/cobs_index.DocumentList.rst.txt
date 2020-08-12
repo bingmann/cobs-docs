@@ -1,4 +1,4 @@
-cobs\_index.DocumentList
+﻿cobs\_index.DocumentList
 ========================
 
 .. currentmodule:: cobs_index
